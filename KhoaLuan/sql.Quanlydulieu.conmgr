@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sql.Quanlydulieu"
+  DTS:DTSID="{64CFAE01-C871-4ABB-9158-9E28B4720DC8}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=sql;Initial Catalog=Quanlydulieu;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-KhoaLuan-{64CFAE01-C871-4ABB-9158-9E28B4720DC8}sql.Quanlydulieu;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

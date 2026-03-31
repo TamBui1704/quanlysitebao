@@ -1,0 +1,1103 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/sql;DWH_Royalty",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "sql",
+            "database": "DWH_Royalty"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "Windows",
+          "kind": "SQL",
+          "path": "sql;DWH_Royalty",
+          "Username": "KHOALUAN\\tambt",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim Channel",
+        "columns": [
+          {
+            "name": "Channel Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Channel Key"
+          },
+          {
+            "name": "Alternate Channel ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Channel ID"
+          },
+          {
+            "name": "Alternate Parent Channel ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Parent Channel ID"
+          },
+          {
+            "name": "Channel Name",
+            "dataType": "string",
+            "sourceColumn": "Channel Name"
+          },
+          {
+            "name": "Parent Channel Name",
+            "dataType": "string",
+            "sourceColumn": "Parent Channel Name"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    Dim_Channel = Source{[Schema=\"Dim\",Item=\"Channel\"]}[Data]",
+                "in",
+                "    Dim_Channel"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Date",
+        "columns": [
+          {
+            "name": "Date Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Date Key"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Date"
+          },
+          {
+            "name": "Day Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Day Number"
+          },
+          {
+            "name": "Day",
+            "dataType": "string",
+            "sourceColumn": "Day"
+          },
+          {
+            "name": "Month",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Month"
+          },
+          {
+            "name": "Short Month",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Short Month"
+          },
+          {
+            "name": "Calendar Month Number",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Month Number"
+          },
+          {
+            "name": "Calendar Month Label",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Calendar Month Label"
+          },
+          {
+            "name": "Quarter",
+            "dataType": "int64",
+            "sourceColumn": "Quarter"
+          },
+          {
+            "name": "Quarter Label",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Quarter Label"
+          },
+          {
+            "name": "Calendar Year",
+            "dataType": "int64",
+            "sourceColumn": "Calendar Year"
+          },
+          {
+            "name": "Calendar Year Label",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Calendar Year Label"
+          },
+          {
+            "name": "Fiscal Month Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Month Number"
+          },
+          {
+            "name": "Fiscal Month Label",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Month Label"
+          },
+          {
+            "name": "Fiscal Year",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Year"
+          },
+          {
+            "name": "Fiscal Year Label",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Fiscal Year Label"
+          },
+          {
+            "name": "ISO Week Number",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ISO Week Number"
+          },
+          {
+            "name": "EnglishDayNameOfWeek",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "EnglishDayNameOfWeek"
+          },
+          {
+            "name": "VietNamDayNameOfWeek",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "VietNamDayNameOfWeek"
+          },
+          {
+            "name": "EuropeDayNumberOfWeek",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "EuropeDayNumberOfWeek"
+          },
+          {
+            "name": "AmericanDayNumberOfWeek",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "AmericanDayNumberOfWeek"
+          },
+          {
+            "name": "DayNumberOfYear",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DayNumberOfYear"
+          },
+          {
+            "name": "WeekNumberOfYear",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "WeekNumberOfYear"
+          },
+          {
+            "name": "CalendarSemester",
+            "dataType": "int64",
+            "sourceColumn": "CalendarSemester"
+          },
+          {
+            "name": "Holiday",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Holiday"
+          },
+          {
+            "name": "StartOfMonth",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "StartOfMonth"
+          },
+          {
+            "name": "EndOfMonth",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "EndOfMonth"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    Dim_Date = Source{[Schema=\"Dim\",Item=\"Date\"]}[Data]",
+                "in",
+                "    Dim_Date"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Calendar",
+            "levels": [
+              {
+                "name": "Calendar Year",
+                "ordinal": 0,
+                "column": "Calendar Year"
+              },
+              {
+                "name": "CalendarSemester",
+                "ordinal": 1,
+                "column": "CalendarSemester"
+              },
+              {
+                "name": "Quarter",
+                "ordinal": 2,
+                "column": "Quarter"
+              },
+              {
+                "name": "Calendar Month Number",
+                "ordinal": 3,
+                "column": "Calendar Month Number"
+              },
+              {
+                "name": "Day",
+                "ordinal": 4,
+                "column": "Day"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Dim Employee Detail",
+        "columns": [
+          {
+            "name": "Employment Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Employment Key"
+          },
+          {
+            "name": "Alternate Employment ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Employment ID"
+          },
+          {
+            "name": "Alternate Employee ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Employee ID"
+          },
+          {
+            "name": "Alternate Employee Type ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Employee Type ID"
+          },
+          {
+            "name": "Employee Name",
+            "dataType": "string",
+            "sourceColumn": "Employee Name"
+          },
+          {
+            "name": "Employee Code",
+            "dataType": "string",
+            "sourceColumn": "Employee Code"
+          },
+          {
+            "name": "Hire Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Hire Date"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email"
+          },
+          {
+            "name": "Employee Type Name",
+            "dataType": "string",
+            "sourceColumn": "Employee Type Name"
+          },
+          {
+            "name": "Start Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Start Date"
+          },
+          {
+            "name": "End Date",
+            "dataType": "dateTime",
+            "sourceColumn": "End Date"
+          },
+          {
+            "name": "Position",
+            "dataType": "string",
+            "sourceColumn": "Position"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"Dim_Employee Detail\" = Source{[Schema=\"Dim\",Item=\"Employee Detail\"]}[Data]",
+                "in",
+                "    #\"Dim_Employee Detail\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Job",
+        "columns": [
+          {
+            "name": "Job Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Job Key"
+          },
+          {
+            "name": "Alternate Job ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Job ID"
+          },
+          {
+            "name": "Job Name",
+            "dataType": "string",
+            "sourceColumn": "Job Name"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    Dim_Job = Source{[Schema=\"Dim\",Item=\"Job\"]}[Data]",
+                "in",
+                "    Dim_Job"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Post Type",
+        "columns": [
+          {
+            "name": "Post Type Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Post Type Key"
+          },
+          {
+            "name": "Alternate Post Type ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Post Type ID"
+          },
+          {
+            "name": "Alternate Post Sub Type ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Post Sub Type ID"
+          },
+          {
+            "name": "Post Type Name",
+            "dataType": "string",
+            "sourceColumn": "Post Type Name"
+          },
+          {
+            "name": "Post Sub Type Name",
+            "dataType": "string",
+            "sourceColumn": "Post Sub Type Name"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"Dim_Post Type\" = Source{[Schema=\"Dim\",Item=\"Post Type\"]}[Data]",
+                "in",
+                "    #\"Dim_Post Type\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Ranking",
+        "columns": [
+          {
+            "name": "Ranking Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Ranking Key"
+          },
+          {
+            "name": "Alternate Ranking Id",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Ranking Id"
+          },
+          {
+            "name": "Ranking Name",
+            "dataType": "string",
+            "sourceColumn": "Ranking Name"
+          },
+          {
+            "name": "Level",
+            "dataType": "int64",
+            "sourceColumn": "Level"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    Dim_Ranking = Source{[Schema=\"Dim\",Item=\"Ranking\"]}[Data]",
+                "in",
+                "    Dim_Ranking"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fact Royalty",
+        "columns": [
+          {
+            "name": "Post Key",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Post Key"
+          },
+          {
+            "name": "Post Type Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Post Type Key"
+          },
+          {
+            "name": "Employment Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Employment Key"
+          },
+          {
+            "name": "Royalty Status Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Royalty Status Key"
+          },
+          {
+            "name": "Channel Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Channel Key"
+          },
+          {
+            "name": "Ranking Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Ranking Key"
+          },
+          {
+            "name": "Job Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Job Key"
+          },
+          {
+            "name": "Date key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Date key"
+          },
+          {
+            "name": "Royalty Excluding Tax",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Total Royalty Excluding Tax"
+          },
+          {
+            "type": "calculated",
+            "name": "Royalty Excluding Tax ( VNĐ)",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "'Fact Royalty'[Royalty Excluding Tax]*1000"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    Fact_Royalty = Source{[Schema=\"Fact\",Item=\"Royalty\"]}[Data]",
+                "in",
+                "    Fact_Royalty"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Royalties Excluding Tax",
+            "description": "Tổng tiền nhuận bút",
+            "expression": "SUM('Fact Royalty'[Royalty Excluding Tax ( VNĐ)])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Post Code Count",
+            "description": "Số bài viết",
+            "expression": " DISTINCTCOUNT('Fact Royalty'[Post Key])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Post Code Count Level 1",
+            "description": "Số bài viết được đánh giá hạng 1",
+            "expression": " CALCULATE([Post Code Count], 'Dim Ranking'[Level]=1)",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Post Code Count Level 2",
+            "description": "Số bài viết được đánh giá hạng 2",
+            "expression": " CALCULATE([Post Code Count], 'Dim Ranking'[Level]=2)"
+          },
+          {
+            "name": "Post Code Count Level 3",
+            "description": "Số bài viết được đánh giá hạng 3",
+            "expression": " CALCULATE([Post Code Count], 'Dim Ranking'[Level]=3)",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Post Code Count Level 4",
+            "description": "Số bài viết được đánh giá hạng 4",
+            "expression": " CALCULATE([Post Code Count], 'Dim Ranking'[Level]=4)",
+            "formatString": "#,##0;-#,##0"
+          }
+        ]
+      },
+      {
+        "name": "Dim Royalty Status",
+        "columns": [
+          {
+            "name": "ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "ID"
+          },
+          {
+            "name": "Royalty Name",
+            "dataType": "string",
+            "sourceColumn": "Royalty Name"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"Dim_Royalty Status\" = Source{[Schema=\"Dim\",Item=\"Royalty Status\"]}[Data]",
+                "in",
+                "    #\"Dim_Royalty Status\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fact View Channel",
+        "columns": [
+          {
+            "name": "Channel Key",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Channel Key"
+          },
+          {
+            "name": "Alternate View Channel ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate View Channel ID"
+          },
+          {
+            "name": "Alternate Channel ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate Channel ID"
+          },
+          {
+            "name": "Date View",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Date View"
+          },
+          {
+            "name": "View PC",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "View PC"
+          },
+          {
+            "name": "View Mobile",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "View Mobile"
+          },
+          {
+            "name": "View App",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "View App"
+          },
+          {
+            "name": "Total View",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Total View"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"Fact_View Channel\" = Source{[Schema=\"Fact\",Item=\"View Channel\"]}[Data]",
+                "in",
+                "    #\"Fact_View Channel\""
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total View Channel",
+            "description": "Tổng view của mục",
+            "expression": "SUM('Fact View Channel'[Total View])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Total View PC Channel",
+            "description": "Tổng view pc của mục",
+            "expression": "SUM('Fact View Channel'[View PC])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Total View Mobile Channel",
+            "description": "Tổng view mobile của mục",
+            "expression": "SUM('Fact View Channel'[View Mobile])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Total View App Channel",
+            "description": "Tổng view app của mục",
+            "expression": "SUM('Fact View Channel'[View App])",
+            "formatString": "#,##0;-#,##0"
+          }
+        ]
+      },
+      {
+        "name": "Fact View Page",
+        "columns": [
+          {
+            "name": "Alternate View Page ID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Alternate View Page ID"
+          },
+          {
+            "name": "Hourly",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Hourly"
+          },
+          {
+            "name": "Date View",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Date View"
+          },
+          {
+            "name": "View PC",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "View PC"
+          },
+          {
+            "name": "View Mobile",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "View Mobile"
+          },
+          {
+            "name": "View App",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "View App"
+          },
+          {
+            "name": "Total View",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "Total View"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"Fact_View Page\" = Source{[Schema=\"Fact\",Item=\"View Page\"]}[Data]",
+                "in",
+                "    #\"Fact_View Page\""
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total View Page",
+            "description": "Tổng view của toàn trang",
+            "expression": " SUM('Fact View Page'[Total View])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Total View App Page",
+            "description": "Tổng view app của toàn trang",
+            "expression": "SUM('Fact View Page'[View App])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Total View PC Page",
+            "description": "Tổng view pc của toàn trang",
+            "expression": "SUM('Fact View Page'[View PC])",
+            "formatString": "#,##0;-#,##0"
+          },
+          {
+            "name": "Total View Mobile Page",
+            "description": "Tổng view mobile của toàn trang",
+            "expression": "SUM('Fact View Page'[View Mobile])",
+            "formatString": "#,##0;-#,##0"
+          }
+        ]
+      },
+      {
+        "name": "User Channel Permissions",
+        "columns": [
+          {
+            "name": "User Channel Permissions Key",
+            "dataType": "int64",
+            "sourceColumn": "User Channel Permissions Key"
+          },
+          {
+            "name": "Account",
+            "dataType": "string",
+            "sourceColumn": "Account"
+          },
+          {
+            "name": "Channel Name",
+            "dataType": "string",
+            "sourceColumn": "Channel Name"
+          },
+          {
+            "name": "Channel Column",
+            "dataType": "string",
+            "sourceColumn": "Channel Column"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"SecurityBI_User Channel Permissions\" = Source{[Schema=\"SecurityBI\",Item=\"User Channel Permissions\"]}[Data]",
+                "in",
+                "    #\"SecurityBI_User Channel Permissions\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Users",
+        "columns": [
+          {
+            "name": "User Key",
+            "dataType": "int64",
+            "sourceColumn": "User Key"
+          },
+          {
+            "name": "User Name",
+            "dataType": "string",
+            "sourceColumn": "User Name"
+          },
+          {
+            "name": "Account",
+            "dataType": "string",
+            "sourceColumn": "Account"
+          },
+          {
+            "name": "Roles",
+            "dataType": "string",
+            "sourceColumn": "Roles"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email"
+          },
+          {
+            "name": "Create Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Create Date"
+          },
+          {
+            "name": "Create By",
+            "dataType": "string",
+            "sourceColumn": "Create By"
+          },
+          {
+            "name": "Note",
+            "dataType": "string",
+            "sourceColumn": "Note"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    SecurityBI_Users = Source{[Schema=\"SecurityBI\",Item=\"Users\"]}[Data]",
+                "in",
+                "    SecurityBI_Users"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Dim Post Detail",
+        "columns": [
+          {
+            "name": "Post Name",
+            "dataType": "string",
+            "sourceColumn": "Post Name"
+          },
+          {
+            "name": "Post Code",
+            "dataType": "string",
+            "sourceColumn": "Post Code"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/sql;DWH_Royalty\",",
+                "    #\"Dim_Post Detail\" = Source{[Schema=\"Dim\",Item=\"Post Detail\"]}[Data]",
+                "in",
+                "    #\"Dim_Post Detail\""
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "33467379-f305-4f03-84ff-2fec84a7df81",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Channel Key",
+        "toTable": "Dim Channel",
+        "toColumn": "Channel Key"
+      },
+      {
+        "name": "24e122d5-f6e4-4c54-95ac-511dfe7e5092",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Date key",
+        "toTable": "Dim Date",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "f8105e34-15e9-428c-879c-bf379aecee63",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Employment Key",
+        "toTable": "Dim Employee Detail",
+        "toColumn": "Employment Key"
+      },
+      {
+        "name": "51f44ba8-69a2-41a7-9b9d-a6649014b6ff",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Job Key",
+        "toTable": "Dim Job",
+        "toColumn": "Job Key"
+      },
+      {
+        "name": "261892db-69f2-4805-8d16-b997eb7766c6",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Post Type Key",
+        "toTable": "Dim Post Type",
+        "toColumn": "Post Type Key"
+      },
+      {
+        "name": "aa7100f0-e226-450e-b427-f00ec6de5818",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Ranking Key",
+        "toTable": "Dim Ranking",
+        "toColumn": "Ranking Key"
+      },
+      {
+        "name": "7d15c68f-4241-42e2-8eaa-7c03997f8d19",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Royalty Status Key",
+        "toTable": "Dim Royalty Status",
+        "toColumn": "ID"
+      },
+      {
+        "name": "fb142af7-27c8-4727-a5d8-dbb5d6e65de2",
+        "fromTable": "Fact View Channel",
+        "fromColumn": "Channel Key",
+        "toTable": "Dim Channel",
+        "toColumn": "Channel Key"
+      },
+      {
+        "name": "fb373105-c424-499d-b115-dcf25cec9a69",
+        "fromTable": "Fact View Page",
+        "fromColumn": "Date View",
+        "toTable": "Dim Date",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "40c4782c-3256-4f83-b9c6-9e577276cb15",
+        "fromTable": "Fact View Channel",
+        "fromColumn": "Date View",
+        "toTable": "Dim Date",
+        "toColumn": "Date Key"
+      },
+      {
+        "name": "c48c60a5-5a47-44a4-b594-a5b29663faf0",
+        "fromTable": "Fact Royalty",
+        "fromColumn": "Post Key",
+        "toTable": "Dim Post Detail",
+        "toColumn": "Post Code"
+      }
+    ],
+    "roles": [
+      {
+        "name": "Role",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "KHOALUAN\\BI NHUAN",
+            "memberId": "S-1-5-21-3428748481-4088836066-4144519423-1111"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "Dim Channel",
+            "filterExpression": [
+              "IF (",
+              "    CONTAINS ( Users, Users[Account], USERNAME(), Users[Roles], \"Administrator\" ) ||",
+              "    (",
+              "        CONTAINS ( Users, Users[Account], USERNAME(), Users[Roles], \"User\" ) &&",
+              "        (OR  (NOT CONTAINS ( 'User Channel Permissions','User Channel Permissions'[Account], USERNAME()),  ",
+              "                 CONTAINS (",
+              "                'User Channel Permissions',",
+              "                'User Channel Permissions'[Account], USERNAME(),",
+              "                'User Channel Permissions'[Channel Name], 'Dim Channel'[Parent Channel Name],",
+              "                'User Channel Permissions'[Channel Column], \"Parent Channel Name\"",
+              "                          )",
+              "            ) ||",
+              "\t    OR   (NOT CONTAINS ( 'User Channel Permissions','User Channel Permissions'[Account], USERNAME()),  ",
+              "                 CONTAINS (",
+              "                'User Channel Permissions',",
+              "                'User Channel Permissions'[Account], USERNAME(),",
+              "                'User Channel Permissions'[Channel Name], 'Dim Channel'[Channel Name],",
+              "                'User Channel Permissions'[Channel Column], \"Channel Name\"",
+              "                          )",
+              "            )",
+              "         )",
+              "    )",
+              "    , TRUE ()",
+              "    , FALSE () ",
+              "    )",
+              "    "
+            ]
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

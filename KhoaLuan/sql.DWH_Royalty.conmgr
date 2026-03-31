@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sql.DWH_Royalty"
+  DTS:DTSID="{E75B9A60-79DE-4B63-A213-AE299F5B3821}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=sql;Initial Catalog=DWH_Royalty;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-KhoaLuan-{E75B9A60-79DE-4B63-A213-AE299F5B3821}sql.DWH_Royalty;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

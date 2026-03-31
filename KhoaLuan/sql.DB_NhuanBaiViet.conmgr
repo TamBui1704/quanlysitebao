@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sql.DB_NhuanBaiViet"
+  DTS:DTSID="{CBE9C5A0-F467-48F9-8708-6B9EF2E6C003}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=sql;Initial Catalog=DB_NhuanBaiViet;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-KhoaLuan-{CBE9C5A0-F467-48F9-8708-6B9EF2E6C003}sql.DB_NhuanBaiViet;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

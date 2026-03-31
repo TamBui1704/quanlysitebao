@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/16/2023 1:18:30 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SQL"
+  DTS:CreatorName="KHOALUAN\tambt"
+  DTS:DTSID="{F40C0EA4-C82A-4F24-8C92-1C789FB15842}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{850DB42B-B23A-427D-A6FF-81B654009CF5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sql.KhoaLuan_Tabular]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{92ED02C1-68B8-47FB-8FB8-4900167B9DAF}"
+      DTS:ObjectName="sql.KhoaLuan_Tabular">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Data Source=sql;User ID=KHOALUAN\tambt;Initial Catalog=KhoaLuan_Tabular;Provider=MSOLAP.8;Impersonation Level=Impersonate;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvZuAIdY0i0m5/OXnSuRoKQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAnG5Fgrzf2z/4XvvMkg6sEAAAAAASAAACgAAAAEAAAABMdegkPVelzoYrGH0866XsYAAAAsPY0UzhsGXZHCSgddoxTW/aggRpLqsWkFAAAALVwpU7BWD3pUNIGQnWrkECB5DR3</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Analysis Services Execute DDL Task"
+      DTS:CreationName="Microsoft.ASExecuteDDLTask"
+      DTS:Description="Analysis Services Execute DDL Task"
+      DTS:DTSID="{BE2ADEE0-0CD1-4F67-B938-A4709A687F33}"
+      DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Analysis Services Execute DDL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASDdlData
+          ConnectionName="sql.KhoaLuan_Tabular"
+          SourceType="DirectInput"
+          Source="{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;full&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;KhoaLuan_Tabular&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Analysis Services Execute DDL Task"
+          TopLeft="225,205" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[sql.KhoaLuan_Tabular]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
