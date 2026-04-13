@@ -121,7 +121,7 @@ quanlysitebao/
 | `MasterPackage.dtsx` | Orchestrate toàn bộ pipeline ETL (chạy tuần tự `Dim` → `Fact`) | Chạy định kỳ hàng ngày bằng Agent Job |
 ---
 
-## 📐 Mô hình dữ liệu (Snowflake Schema - Bông tuyết)
+## 📐 Mô hình dữ liệu (Galaxy Schema - Chòm sao sự kiện)
 
 Dựa trên cấu trúc Tabular Model thực tế:
 
